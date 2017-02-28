@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	var docs=[
+  {id:1,words:['hello','words']},
+  {id:2,words:['hello','kids']},
+  {id:3,words:['zzz','hello']},
+  {id:4,words:['world','kids']}
+];
+findDocList(docs,['hello']);//文档1，文档2，文档3
+findDocList(docs,['hello','words']);//文档1
+
+function findDocList(docs,arr){
+  var str="";
+  docs.forEach(function(obj1,index1){
+    if(arr.length==1){
+      obj1.words.forEach(function(obj2,index2){
+        if(obj2==arr[0]){
+          str+="文档"+obj1.id+",";
+          
+        }
+      })
+    }else{
+      if(arr.sort().toString()==obj1.words.sort().toString()){
+        str+="文档"+obj1.id+",";
+      }
+    }
+  });
+  console.log(str);
+}  
+</script>
