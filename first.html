@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+function duplicates(arr){
+   var output=[];
+   arr.forEach(function(index){
+     if(arr.indexOf(index)!=arr.lastIndexOf(index)&&output.indexOf(index)==-1)
+       output.push(index);
+     
+   })
+   return output;
+ }
+var output=duplicates([1,2,4,4,3,3,1,5,3]).sort(); 
+console.log(output);
+</script>
